@@ -1,0 +1,6 @@
+// 1.20.2	2023-10-29T16:25:35.9437672	Loot Tables
+b74c96d0c32c6b9f2811de4c6681553c50950c7b data/necromancer/loot_tables/blocks/necrock.json
+e70807f9b90370f12d91d822cf71e1c62e11c3ce data/necromancer/loot_tables/blocks/necrock_slab.json
+d59a59b02fc11d10c2338a9e84740d2499324a5e data/necromancer/loot_tables/blocks/necrock_stairs.json
+238c6fa7e8665527326357a4997f2feecea62ea9 data/necromancer/loot_tables/blocks/necrock_wall.json
+cb90bdfa0e9e3934407a4cc213b6ce4d99faec1a data/necromancer/loot_tables/blocks/necroite_block.json

@@ -1,0 +1,7 @@
+// 1.20.2	2023-10-29T15:56:13.323761	Tags for minecraft:block mod id necromancer
+e179987418e5a8032854409565c5072fa323255f data/forge/tags/blocks/stone.json
+4bda24a9c0849786e369355f13b82e15edc40002 data/minecraft/tags/blocks/mineable/pickaxe.json
+7aebabfa6ece434ba3f5b0e1e2f2664465c006f7 data/minecraft/tags/blocks/needs_iron_tool.json
+a7d9288d45fe98093405d83434329c959a54c5bb data/minecraft/tags/blocks/slabs.json
+5a53a409fd9158de0e19126efbe604517cd4fb83 data/minecraft/tags/blocks/stairs.json
+7297014f48fb9e510f904b5187ee6cf548a02f88 data/minecraft/tags/blocks/walls.json

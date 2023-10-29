@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "lych.necromancer.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "necromancer.refmap.json",
+  "mixins": [
+    "PlayerMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

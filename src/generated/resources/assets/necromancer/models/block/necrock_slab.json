@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "necromancer:block/necrock",
+    "side": "necromancer:block/necrock",
+    "top": "necromancer:block/necrock"
+  }
+}

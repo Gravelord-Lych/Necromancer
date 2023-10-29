@@ -1,0 +1,16 @@
+{
+  "block.necromancer.necrock": "Necrock",
+  "block.necromancer.necrock_slab": "Necrock Slab",
+  "block.necromancer.necrock_stairs": "Necrock Stairs",
+  "block.necromancer.necrock_wall": "Necrock Wall",
+  "block.necromancer.necroite_block": "Necroite Block",
+  "item.necromancer.necrodust": "Necrodust",
+  "item.necromancer.necroite_ingot": "Necroite Ingot",
+  "itemGroup.necromancer.block_items": "Necromancer Blocks",
+  "itemGroup.necromancer.common": "Necromancer Items",
+  "message.necromancer.keep_inventory_time": "Keep-Inventory times remaining: %s",
+  "message.necromancer.keep_inventory_time.player_state.depleted": "Keep-Inventory times have been used up",
+  "message.necromancer.keep_inventory_time.player_state.infinity": "Infinity",
+  "message.necromancer.keep_inventory_time.player_state.ready": "%d",
+  "message.necromancer.keep_inventory_time.player_state.rule_enabled": "Gamerule keepInventory is true"
+}
