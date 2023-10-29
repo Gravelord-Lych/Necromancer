@@ -1,5 +1,13 @@
 {
+  "block.necromancer.cracked_necrock_bricks": "Cracked Necrock Bricks",
+  "block.necromancer.cracked_necrock_bricks_slab": "Cracked Necrock Brick Slab",
+  "block.necromancer.cracked_necrock_bricks_stairs": "Cracked Necrock Brick Stairs",
+  "block.necromancer.cracked_necrock_bricks_wall": "Cracked Necrock Brick Wall",
   "block.necromancer.necrock": "Necrock",
+  "block.necromancer.necrock_bricks": "Necrock Bricks",
+  "block.necromancer.necrock_bricks_slab": "Necrock Brick Slab",
+  "block.necromancer.necrock_bricks_stairs": "Necrock Brick Stairs",
+  "block.necromancer.necrock_bricks_wall": "Necrock Brick Wall",
   "block.necromancer.necrock_slab": "Necrock Slab",
   "block.necromancer.necrock_stairs": "Necrock Stairs",
   "block.necromancer.necrock_wall": "Necrock Wall",

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "necromancer:block/cracked_necrock_bricks"
+  }
+}

@@ -3,11 +3,14 @@ package lych.necromancer.block;
 import net.minecraft.resources.ResourceLocation;
 
 public final class ModBlockNames {
+    public static final String CRACKED_NECROCK_BRICKS = "cracked_necrock_bricks";
+    public static final String NECROCK = "necrock";
+    public static final String NECROCK_BRICKS = "necrock_bricks";
+    public static final String NECROITE_BLOCK = "necroite_block";
+
     private static final String SLAB_SUFFIX = "_slab";
     private static final String STAIRS_SUFFIX = "_stairs";
     private static final String WALL_SUFFIX = "_wall";
-    public static final String NECROCK = "necrock";
-    public static final String NECROITE_BLOCK = "necroite_block";
 
     private ModBlockNames() {}
 

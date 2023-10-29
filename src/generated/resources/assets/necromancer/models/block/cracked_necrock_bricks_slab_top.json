@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "necromancer:block/cracked_necrock_bricks",
+    "side": "necromancer:block/cracked_necrock_bricks",
+    "top": "necromancer:block/cracked_necrock_bricks"
+  }
+}

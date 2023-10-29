@@ -15,27 +15,51 @@ public abstract class LangDataGen extends LanguageProvider {
         super(output, Necromancer.MODID, locale);
     }
 
-    public static class EnUs extends LangDataGen {
+    public static final class EnUs extends LangDataGen {
         public EnUs(PackOutput output) {
             super(output, "en_us");
         }
 
         @Override
         protected void addTranslations() {
-            add(KeepInventoryHelper.MESSAGE_ID, "Keep-Inventory times remaining: %s");
-            add(KeepInventoryHelper.PlayerState.READY.getMessageId(), "%d");
-            add(KeepInventoryHelper.PlayerState.INFINITY.getMessageId(), "Infinity");
-            add(KeepInventoryHelper.PlayerState.DEPLETED.getMessageId(), "Keep-Inventory times have been used up");
-            add(KeepInventoryHelper.PlayerState.RULE_ENABLED.getMessageId(), "Gamerule keepInventory is true");
+            addItems();
+            addBlocks();
+            addItemGroups();
+            addMisc();
+        }
+
+        private void addItems() {
             addItem(ModCommonItems.NECRODUST, "Necrodust");
             addItem(ModCommonItems.NECROITE_INGOT, "Necroite Ingot");
+        }
+
+        private void addBlocks() {
+            addBlock(ModBlockGroups.CRACKED_NECROCK_BRICKS.base(), "Cracked Necrock Bricks");
+            addBlock(ModBlockGroups.CRACKED_NECROCK_BRICKS.slab(), "Cracked Necrock Brick Slab");
+            addBlock(ModBlockGroups.CRACKED_NECROCK_BRICKS.stairs(), "Cracked Necrock Brick Stairs");
+            addBlock(ModBlockGroups.CRACKED_NECROCK_BRICKS.wall(), "Cracked Necrock Brick Wall");
             addBlock(ModBlocks.NECROITE_BLOCK, "Necroite Block");
             addBlock(ModBlockGroups.NECROCK.base(), "Necrock");
             addBlock(ModBlockGroups.NECROCK.slab(), "Necrock Slab");
             addBlock(ModBlockGroups.NECROCK.stairs(), "Necrock Stairs");
             addBlock(ModBlockGroups.NECROCK.wall(), "Necrock Wall");
+            addBlock(ModBlockGroups.NECROCK_BRICKS.base(), "Necrock Bricks");
+            addBlock(ModBlockGroups.NECROCK_BRICKS.slab(), "Necrock Brick Slab");
+            addBlock(ModBlockGroups.NECROCK_BRICKS.stairs(), "Necrock Brick Stairs");
+            addBlock(ModBlockGroups.NECROCK_BRICKS.wall(), "Necrock Brick Wall");
+        }
+
+        private void addItemGroups() {
             add(ModCreativeModeTabs.prefixItemGroup(ModCreativeModeTabNames.COMMON), "Necromancer Items");
             add(ModCreativeModeTabs.prefixItemGroup(ModCreativeModeTabNames.BLOCK_ITEMS), "Necromancer Blocks");
+        }
+
+        private void addMisc() {
+            add(KeepInventoryHelper.MESSAGE_ID, "Keep-Inventory times remaining: %s");
+            add(KeepInventoryHelper.PlayerState.READY.getMessageId(), "%d");
+            add(KeepInventoryHelper.PlayerState.INFINITY.getMessageId(), "Infinity");
+            add(KeepInventoryHelper.PlayerState.DEPLETED.getMessageId(), "Keep-Inventory times have been used up");
+            add(KeepInventoryHelper.PlayerState.RULE_ENABLED.getMessageId(), "Gamerule keepInventory is true");
         }
     }
 }

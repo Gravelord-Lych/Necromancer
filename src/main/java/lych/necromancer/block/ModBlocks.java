@@ -30,6 +30,10 @@ public final class ModBlocks {
         return () -> newBlock(op);
     }
 
+    public static Supplier<Block> copy(Supplier<? extends Block> sup) {
+        return () -> new Block(Properties.copy(sup.get()));
+    }
+
     public static Block newBlock(UnaryOperator<Properties> op) {
         return new Block(op.apply(Properties.of()));
     }

@@ -1,5 +1,6 @@
 package lych.necromancer.data.loot;
 
+import lych.necromancer.block.BlockEntry;
 import lych.necromancer.block.ModBlockGroups;
 import lych.necromancer.block.ModBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -21,11 +22,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(ModBlocks.NECROITE_BLOCK.get());
-        dropSelf(ModBlockGroups.NECROCK.base().get());
-        dropSelf(ModBlockGroups.NECROCK.slab().get());
-        dropSelf(ModBlockGroups.NECROCK.stairs().get());
-        dropSelf(ModBlockGroups.NECROCK.wall().get());
+        dropSelf(ModBlocks.NECROITE_BLOCK);
+        ModBlockGroups.NECROCK.forAllEntries(this::dropSelf);
+        ModBlockGroups.NECROCK_BRICKS.forAllEntries(this::dropSelf);
+        ModBlockGroups.CRACKED_NECROCK_BRICKS.forAllEntries(this::dropSelf);
+    }
+
+    protected void dropSelf(BlockEntry<?, ?> entry) {
+        dropSelf(entry.get());
     }
 
     @Override

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "necromancer:necrock_bricks"
+  },
+  "result": "necromancer:necrock_bricks_wall"
+}
