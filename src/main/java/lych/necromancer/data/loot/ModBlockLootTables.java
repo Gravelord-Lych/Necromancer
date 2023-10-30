@@ -24,6 +24,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(ModBlocks.NECROITE_BLOCK);
         ModBlockGroups.NECROCK.forAllEntries(this::dropSelf);
+        ModBlockGroups.POLISHED_NECROCK.forAllEntries(this::dropSelf);
         ModBlockGroups.NECROCK_BRICKS.forAllEntries(this::dropSelf);
         ModBlockGroups.CRACKED_NECROCK_BRICKS.forAllEntries(this::dropSelf);
     }

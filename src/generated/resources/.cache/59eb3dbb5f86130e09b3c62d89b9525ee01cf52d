@@ -1,4 +1,4 @@
-// 1.20.2	2023-10-29T19:28:34.9046462	Loot Tables
+// 1.20.2	2023-10-31T00:16:25.625779	Loot Tables
 5c0b718131d3f9868047d07e8a25d30f56161643 data/necromancer/loot_tables/blocks/cracked_necrock_bricks.json
 59089c3d60c5740724b3404402b0b07cc96f274f data/necromancer/loot_tables/blocks/cracked_necrock_bricks_slab.json
 cfe460438f422d84223a5e2c1ecf38bc569b7222 data/necromancer/loot_tables/blocks/cracked_necrock_bricks_stairs.json
@@ -12,3 +12,7 @@ e70807f9b90370f12d91d822cf71e1c62e11c3ce data/necromancer/loot_tables/blocks/nec
 d59a59b02fc11d10c2338a9e84740d2499324a5e data/necromancer/loot_tables/blocks/necrock_stairs.json
 238c6fa7e8665527326357a4997f2feecea62ea9 data/necromancer/loot_tables/blocks/necrock_wall.json
 cb90bdfa0e9e3934407a4cc213b6ce4d99faec1a data/necromancer/loot_tables/blocks/necroite_block.json
+792aa207ada5cfbbecee3d7ce8d3e188983281f2 data/necromancer/loot_tables/blocks/polished_necrock.json
+b2d08ceb47b22ed23e059b626cf4c2aee5b6c11f data/necromancer/loot_tables/blocks/polished_necrock_slab.json
+44427f97d71a10e76db02a5fa740e4ceaba038e4 data/necromancer/loot_tables/blocks/polished_necrock_stairs.json
+9487b048e7f93b80c2e709527ab32ed1f1bc872f data/necromancer/loot_tables/blocks/polished_necrock_wall.json

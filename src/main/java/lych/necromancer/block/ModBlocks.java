@@ -55,7 +55,7 @@ public final class ModBlocks {
     public static <T extends BlockGroup> T group(BlockEntry<?, ?> block, T group) {
         BlockGroup oldGroup = GROUPS.put(block, group);
         if (oldGroup != null) {
-            throw new IllegalStateException("Duplicate family definition for " + block.location());
+            throw new IllegalStateException("Duplicate group definition for " + block.location());
         }
         return group;
     }

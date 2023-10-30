@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "necromancer:block/polished_necrock_slab"
+    },
+    "type=double": {
+      "model": "necromancer:block/polished_necrock"
+    },
+    "type=top": {
+      "model": "necromancer:block/polished_necrock_slab_top"
+    }
+  }
+}

@@ -11,6 +11,10 @@
     "necromancer:necrock",
     "necromancer:necrock_slab",
     "necromancer:necrock_stairs",
-    "necromancer:necrock_wall"
+    "necromancer:necrock_wall",
+    "necromancer:polished_necrock",
+    "necromancer:polished_necrock_slab",
+    "necromancer:polished_necrock_stairs",
+    "necromancer:polished_necrock_wall"
   ]
 }

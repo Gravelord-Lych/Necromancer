@@ -1,4 +1,4 @@
-// 1.20.2	2023-10-29T19:28:34.9036493	Item Models: necromancer
+// 1.20.2	2023-10-31T00:16:25.6252744	Item Models: necromancer
 bfb54594bd6c5bdcdb26f9e37afb1da8505e41b5 assets/necromancer/models/item/cracked_necrock_bricks.json
 f57ae0e2640226ab49ef9474968986dad15cf807 assets/necromancer/models/item/cracked_necrock_bricks_slab.json
 28c9583cf184afe64940e45771565361b9a58380 assets/necromancer/models/item/cracked_necrock_bricks_stairs.json
@@ -14,3 +14,7 @@ c7735a93112297a9537a5cccb80e3e412594ce0a assets/necromancer/models/item/necrock_
 8a6805f97c74aaab31c10e26dbdccd4c3ec07075 assets/necromancer/models/item/necrodust.json
 03288192fbba9d06754a66fbdb799da8c69f47cf assets/necromancer/models/item/necroite_block.json
 6802b8757e2b21d9ee9ba670db06210f6282ca06 assets/necromancer/models/item/necroite_ingot.json
+4c974bf5f750fd0778a2ad9abdae7850023d8da2 assets/necromancer/models/item/polished_necrock.json
+3d98657a57002b559a95ed3ef861847148133489 assets/necromancer/models/item/polished_necrock_slab.json
+b7ed00e2a07fa1ed05beeeafb81abf3cb5844f8a assets/necromancer/models/item/polished_necrock_stairs.json
+9f0caeaeba0c0ba9b46115df6ae01178391030b6 assets/necromancer/models/item/polished_necrock_wall.json

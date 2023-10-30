@@ -43,6 +43,10 @@ public abstract class LangDataGen extends LanguageProvider {
             addBlock(ModBlockGroups.NECROCK.slab(), "Necrock Slab");
             addBlock(ModBlockGroups.NECROCK.stairs(), "Necrock Stairs");
             addBlock(ModBlockGroups.NECROCK.wall(), "Necrock Wall");
+            addBlock(ModBlockGroups.POLISHED_NECROCK.base(), "Polished Necrock");
+            addBlock(ModBlockGroups.POLISHED_NECROCK.slab(), "Polished Necrock Slab");
+            addBlock(ModBlockGroups.POLISHED_NECROCK.stairs(), "Polished Necrock Stairs");
+            addBlock(ModBlockGroups.POLISHED_NECROCK.wall(), "Polished Necrock Wall");
             addBlock(ModBlockGroups.NECROCK_BRICKS.base(), "Necrock Bricks");
             addBlock(ModBlockGroups.NECROCK_BRICKS.slab(), "Necrock Brick Slab");
             addBlock(ModBlockGroups.NECROCK_BRICKS.stairs(), "Necrock Brick Stairs");
