@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "necromancer:necroite_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "necromancer:necroite_nugget"
+  }
+}

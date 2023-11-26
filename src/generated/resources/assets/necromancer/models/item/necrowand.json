@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "necromancer:item/necrowand_lv1",
+      "predicate": {
+        "necromancer:necrowand_level": 1.0
+      }
+    },
+    {
+      "model": "necromancer:item/necrowand_lv2",
+      "predicate": {
+        "necromancer:necrowand_level": 2.0
+      }
+    },
+    {
+      "model": "necromancer:item/necrowand_lv3",
+      "predicate": {
+        "necromancer:necrowand_level": 3.0
+      }
+    },
+    {
+      "model": "necromancer:item/necrowand_lv4",
+      "predicate": {
+        "necromancer:necrowand_level": 4.0
+      }
+    },
+    {
+      "model": "necromancer:item/necrowand_lv5",
+      "predicate": {
+        "necromancer:necrowand_level": 5.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "necromancer:item/necrowand_lv1"
+  }
+}

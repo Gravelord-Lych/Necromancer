@@ -16,6 +16,11 @@ public final class ModCommonItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Necromancer.MODID);
     public static final RegistryObject<Item> NECRODUST = register(ModItemNames.NECRODUST, ModCommonItems::createDefault);
     public static final RegistryObject<Item> NECROITE_INGOT = register(ModItemNames.NECROITE_INGOT, ModCommonItems::createDefault);
+    public static final RegistryObject<Item> NECROITE_NUGGET = register(ModItemNames.NECROITE_NUGGET, ModCommonItems::createDefault);
+
+    static {
+        ModSpecialItems.init();
+    }
 
     private ModCommonItems() {}
 

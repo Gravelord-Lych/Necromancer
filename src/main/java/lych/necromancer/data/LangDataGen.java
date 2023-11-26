@@ -4,6 +4,7 @@ import lych.necromancer.Necromancer;
 import lych.necromancer.block.ModBlockGroups;
 import lych.necromancer.block.ModBlocks;
 import lych.necromancer.item.ModCommonItems;
+import lych.necromancer.item.ModSpecialItems;
 import lych.necromancer.util.KeepInventoryHelper;
 import lych.necromancer.util.tab.ModCreativeModeTabNames;
 import lych.necromancer.util.tab.ModCreativeModeTabs;
@@ -31,6 +32,8 @@ public abstract class LangDataGen extends LanguageProvider {
         private void addItems() {
             addItem(ModCommonItems.NECRODUST, "Necrodust");
             addItem(ModCommonItems.NECROITE_INGOT, "Necroite Ingot");
+            addItem(ModCommonItems.NECROITE_NUGGET, "Necroite Nugget");
+            addItem(ModSpecialItems.NECROWAND, "Necrowand");
         }
 
         private void addBlocks() {
@@ -56,6 +59,7 @@ public abstract class LangDataGen extends LanguageProvider {
         private void addItemGroups() {
             add(ModCreativeModeTabs.prefixItemGroup(ModCreativeModeTabNames.COMMON), "Necromancer Items");
             add(ModCreativeModeTabs.prefixItemGroup(ModCreativeModeTabNames.BLOCK_ITEMS), "Necromancer Blocks");
+            add(ModCreativeModeTabs.prefixItemGroup(ModCreativeModeTabNames.SPECIAL), "Necromancer Special Items");
         }
 
         private void addMisc() {

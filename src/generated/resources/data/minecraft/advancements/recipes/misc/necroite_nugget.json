@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_polished_necrock": {
+    "has_necroite_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "necromancer:polished_necrock"
+              "necromancer:necroite_ingot"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:polished_necrock_wall_from_polished_necrock_stonecutting"
+        "recipe": "minecraft:necroite_nugget"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_polished_necrock"
+      "has_necroite_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:polished_necrock_wall_from_polished_necrock_stonecutting"
+      "minecraft:necroite_nugget"
     ]
   },
   "sends_telemetry_event": false

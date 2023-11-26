@@ -1,4 +1,4 @@
-package lych.necromancer.util.tab;
+package lych.necromancer.util;
 
 import java.lang.reflect.Field;
 

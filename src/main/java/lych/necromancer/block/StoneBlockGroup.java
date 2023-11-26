@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.util.Lazy;
 
 import java.util.List;
 import java.util.function.Function;
@@ -39,6 +40,10 @@ public class StoneBlockGroup extends AbstractBlockGroup {
 
     public static StoneBlockGroup of(BlockEntry<?, ?> base) {
         return new StoneBlockGroup(base);
+    }
+
+    public static StoneBlockGroup of(BlockEntry<?, ?> base, Lazy<? extends StoneBlockGroup> polishedForFamilyCreation) {
+        return new WithPolishedRef(base, polishedForFamilyCreation);
     }
 
     @Override
@@ -73,7 +78,7 @@ public class StoneBlockGroup extends AbstractBlockGroup {
     public void generateAdditionalRecipes(RecipeOutput output) {
         RecipeDataGen.stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, slab.get(), base().get(), 2);
         RecipeDataGen.stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, stairs.get(), base().get());
-        RecipeDataGen.stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, wall.get(), base().get());
+        RecipeDataGen.stonecutterResultFromBase(output, RecipeCategory.DECORATIONS, wall.get(), base().get());
     }
 
     public BlockEntry<? extends SlabBlock, ?> slab() {
@@ -86,5 +91,30 @@ public class StoneBlockGroup extends AbstractBlockGroup {
 
     public BlockEntry<? extends WallBlock, ?> wall() {
         return wall;
+    }
+
+    /**
+     * Stone block group with polished stone reference
+     */
+    protected static class WithPolishedRef extends StoneBlockGroup {
+        private final Lazy<? extends StoneBlockGroup> polishedForFamilyCreation;
+
+        protected WithPolishedRef(BlockEntry<?, ?> base, Lazy<? extends StoneBlockGroup> polishedForFamilyCreation) {
+            super(base);
+            this.polishedForFamilyCreation = polishedForFamilyCreation;
+        }
+
+        @Override
+        protected BlockFamily.Builder buildFamily(BlockFamily.Builder builder) {
+            return super.buildFamily(builder).polished(polishedForFamilyCreation.get().base().get());
+        }
+
+        @Override
+        public void generateAdditionalRecipes(RecipeOutput output) {
+            super.generateAdditionalRecipes(output);
+            RecipeDataGen.stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, polishedForFamilyCreation.get().slab().get(), base().get(), 2);
+            RecipeDataGen.stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, polishedForFamilyCreation.get().stairs().get(), base().get());
+            RecipeDataGen.stonecutterResultFromBase(output, RecipeCategory.DECORATIONS, polishedForFamilyCreation.get().wall().get(), base().get());
+        }
     }
 }

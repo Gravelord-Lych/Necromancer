@@ -47,32 +47,31 @@ public class NecromancerData implements INecromancerData {
     public static void transfer(Player oldPlayer, Player newPlayer) {
         newPlayer.getCapability(ModCapabilities.NECROMANCER_DATA).ifPresent(newCap -> {
             oldPlayer.reviveCaps();
-            oldPlayer.getCapability(ModCapabilities.NECROMANCER_DATA).ifPresent(oldCap -> {
-                newCap.setKeepInventoryTimes(oldCap.getKeepInventoryTimes());
-            });
+            oldPlayer.getCapability(ModCapabilities.NECROMANCER_DATA).ifPresent(oldCap -> newCap.setKeepInventoryTimes(oldCap.getKeepInventoryTimes()));
             oldPlayer.invalidateCaps();
         });
     }
 
     public static class Provider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
+        @Nullable
         private NecromancerData data;
 
         @Override
         public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-            return LazyOptional.of(this::getNecromancerData).cast();
+            return cap == ModCapabilities.NECROMANCER_DATA ? LazyOptional.of(this::get).cast() : LazyOptional.empty();
         }
 
         @Override
         public CompoundTag serializeNBT() {
-            return getNecromancerData().serializeNBT();
+            return get().serializeNBT();
         }
 
         @Override
         public void deserializeNBT(CompoundTag nbt) {
-            getNecromancerData().deserializeNBT(nbt);
+            get().deserializeNBT(nbt);
         }
 
-        private NecromancerData getNecromancerData() {
+        private NecromancerData get() {
             if (data == null) {
                 data = new NecromancerData();
             }

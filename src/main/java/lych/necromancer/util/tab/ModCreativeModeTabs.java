@@ -6,6 +6,8 @@ import lych.necromancer.block.BlockGroup;
 import lych.necromancer.block.ModBlockGroups;
 import lych.necromancer.block.ModBlocks;
 import lych.necromancer.item.ModCommonItems;
+import lych.necromancer.item.NecrowandItem;
+import lych.necromancer.util.ReflectionUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -36,6 +38,19 @@ public final class ModCreativeModeTabs {
             .icon(ModCreativeModeTabs::makeBlocksIcon)
             .displayItems(ModCreativeModeTabs::addBlockItems)
             .build());
+    public static final RegistryObject<CreativeModeTab> SPECIAL = CREATIVE_MODE_TABS.register(ModCreativeModeTabNames.SPECIAL, () -> CreativeModeTab.builder()
+            .title(Component.translatable(prefixItemGroup(ModCreativeModeTabNames.SPECIAL)))
+            .withTabsBefore(CreativeModeTabs.BUILDING_BLOCKS,
+                    CreativeModeTabs.COLORED_BLOCKS,
+                    CreativeModeTabs.NATURAL_BLOCKS,
+                    CreativeModeTabs.FUNCTIONAL_BLOCKS,
+                    CreativeModeTabs.REDSTONE_BLOCKS,
+                    CreativeModeTabs.OP_BLOCKS,
+                    ModCreativeModeTabKeys.COMMON,
+                    ModCreativeModeTabKeys.BLOCK_ITEM)
+            .icon(ModCreativeModeTabs::makeSpecialIcon)
+            .displayItems(ModCreativeModeTabs::addSpecialItems)
+            .build());
 
     private ModCreativeModeTabs() {}
 
@@ -46,6 +61,12 @@ public final class ModCreativeModeTabs {
     private static void addBlockItems(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output output) {
         iterateBlockGroups(ModBlockGroups.class, output);
         iterateBlockItems(ModBlocks.class, output);
+    }
+
+    private static void addSpecialItems(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output output) {
+        for (int i = 1; i <= NecrowandItem.MAX_LEVEL; i++) {
+            output.accept(NecrowandItem.leveledNecrowand(i));
+        }
     }
 
     private static void iterateItems(Class<?> src, CreativeModeTab.Output output) {
@@ -86,5 +107,11 @@ public final class ModCreativeModeTabs {
 
     private static ItemStack makeBlocksIcon() {
         return ModBlocks.NECROITE_BLOCK.item().getDefaultInstance();
+    }
+
+    private static ItemStack makeSpecialIcon() {
+        ItemStack icon = NecrowandItem.leveledNecrowand(NecrowandItem.MAX_LEVEL);
+        NecrowandItem.setIcon(icon, true);
+        return icon;
     }
 }

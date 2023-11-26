@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "necroite_ingot",
+  "key": {
+    "#": {
+      "item": "necromancer:necroite_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "necromancer:necroite_ingot"
+  },
+  "show_notification": true
+}

@@ -11,8 +11,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-import static lych.necromancer.item.ModCommonItems.NECRODUST;
-import static lych.necromancer.item.ModCommonItems.NECROITE_INGOT;
+import static lych.necromancer.item.ModCommonItems.*;
 
 public class ItemTagDataGen extends ItemTagsProvider {
     public ItemTagDataGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, CompletableFuture<TagLookup<Block>> blockTagProvider, @Nullable ExistingFileHelper existingFileHelper) {
@@ -23,5 +22,6 @@ public class ItemTagDataGen extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(Tags.Items.DUSTS).add(NECRODUST.get());
         tag(Tags.Items.INGOTS).add(NECROITE_INGOT.get());
+        tag(Tags.Items.NUGGETS).add(NECROITE_NUGGET.get());
     }
 }

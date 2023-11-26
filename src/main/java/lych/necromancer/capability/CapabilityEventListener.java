@@ -14,7 +14,7 @@ public final class CapabilityEventListener {
     private CapabilityEventListener() {}
 
     @SubscribeEvent
-    public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
+    public static void onEntityAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
         if (event.getObject() instanceof Player) {
             event.addCapability(ModCapabilities.NECROMANCER_DATA_ID, new NecromancerData.Provider());
         }

@@ -8,6 +8,7 @@ import net.minecraft.world.item.CreativeModeTab;
 public final class ModCreativeModeTabKeys {
     public static final ResourceKey<CreativeModeTab> COMMON = createKey(ModCreativeModeTabNames.COMMON);
     public static final ResourceKey<CreativeModeTab> BLOCK_ITEM = createKey(ModCreativeModeTabNames.BLOCK_ITEMS);
+    public static final ResourceKey<CreativeModeTab> SPECIAL = createKey(ModCreativeModeTabNames.SPECIAL);
 
     private ModCreativeModeTabKeys() {}
 
