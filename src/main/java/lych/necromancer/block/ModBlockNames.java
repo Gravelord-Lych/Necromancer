@@ -6,6 +6,7 @@ public final class ModBlockNames {
     public static final String CRACKED_NECROCK_BRICKS = "cracked_necrock_bricks";
     public static final String NECROCK = "necrock";
     public static final String NECROCK_BRICKS = "necrock_bricks";
+    public static final String NECROCK_ITEM_CARRIER = "necrock_item_carrier";
     public static final String NECROITE_BLOCK = "necroite_block";
     public static final String POLISHED_NECROCK = "polished_necrock";
 

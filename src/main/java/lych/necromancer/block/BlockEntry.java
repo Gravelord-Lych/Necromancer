@@ -2,12 +2,13 @@ package lych.necromancer.block;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 
 import java.util.Objects;
 import java.util.function.Supplier;
 
-public final class BlockEntry<B extends Block, I extends Item> implements Supplier<B> {
+public final class BlockEntry<B extends Block, I extends Item> implements Supplier<B>, ItemLike {
     private final ResourceLocation location;
     private final Supplier<? extends B> block;
     private final Supplier<? extends I> item;
@@ -71,5 +72,10 @@ public final class BlockEntry<B extends Block, I extends Item> implements Suppli
     @Override
     public int hashCode() {
         return Objects.hash(location, block, item);
+    }
+
+    @Override
+    public Item asItem() {
+        return item();
     }
 }

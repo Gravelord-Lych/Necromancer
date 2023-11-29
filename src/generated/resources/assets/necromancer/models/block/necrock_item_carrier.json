@@ -1,0 +1,6 @@
+{
+  "parent": "necromancer:block/template_item_carrier",
+  "textures": {
+    "top": "necromancer:block/polished_necrock"
+  }
+}

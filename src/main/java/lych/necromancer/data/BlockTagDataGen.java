@@ -8,12 +8,14 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
+import static lych.necromancer.block.ModBlocks.NECROCK_ITEM_CARRIER;
 import static lych.necromancer.block.ModBlocks.NECROITE_BLOCK;
 
 public class BlockTagDataGen extends BlockTagsProvider {
@@ -25,6 +27,8 @@ public class BlockTagDataGen extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         ModBlocks.getAllGroups().forEach(group -> group.applyCommonTags(this::tag));
         tag(BlockTags.NEEDS_IRON_TOOL).add(NECROITE_BLOCK.get());
+        tag(Tags.Blocks.STONE).add(NECROCK_ITEM_CARRIER.get());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(NECROCK_ITEM_CARRIER.get());
     }
 
     protected void tagAll(TagKey<Block> tagKey, BlockGroup group) {

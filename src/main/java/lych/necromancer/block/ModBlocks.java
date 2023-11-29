@@ -23,6 +23,7 @@ public final class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Necromancer.MODID);
     private static final Map<BlockEntry<?, ?>, BlockGroup> GROUPS = new HashMap<>();
     public static final BlockEntry<Block, BlockItem> NECROITE_BLOCK = create(ModBlockNames.NECROITE_BLOCK, using(p -> p.mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(5, 6).sound(SoundType.METAL)));
+    public static final BlockEntry<NecrockItemCarrierBlock, BlockItem> NECROCK_ITEM_CARRIER = create(ModBlockNames.NECROCK_ITEM_CARRIER, () -> new NecrockItemCarrierBlock(by(PropertiesCreator::createNecrockProperties)));
 
     private ModBlocks() {}
 
@@ -35,10 +36,16 @@ public final class ModBlocks {
     }
 
     public static Block newBlock(UnaryOperator<Properties> op) {
-        return new Block(op.apply(Properties.of()));
+        return new Block(by(op));
+    }
+
+    private static Properties by(UnaryOperator<Properties> op) {
+        return op.apply(Properties.of());
     }
 
     public static <B extends Block> BlockEntry<B, BlockItem> create(String name, Supplier<? extends B> sup) {
+        Necromancer.LOGGER.info("Registered {}", name);
+
         return create(name, sup, blockSup -> ModCommonItems.createDefaultBlockItem(blockSup.get()));
     }
 

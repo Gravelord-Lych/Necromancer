@@ -3,6 +3,7 @@ package lych.necromancer;
 import com.mojang.logging.LogUtils;
 import lych.necromancer.block.ModBlockGroups;
 import lych.necromancer.block.ModBlocks;
+import lych.necromancer.block.entity.ModBlockEntities;
 import lych.necromancer.item.ModCommonItems;
 import lych.necromancer.util.tab.ModCreativeModeTabs;
 import net.minecraft.SharedConstants;
@@ -24,8 +25,8 @@ import org.slf4j.Logger;
 @Mod(Necromancer.MODID)
 public class Necromancer {
     public static final String MODID = "necromancer";
+    public static final Logger LOGGER = LogUtils.getLogger();
     private static final String MESSAGE_PREFIX = "message";
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public Necromancer() {
         SharedConstants.IS_RUNNING_IN_IDE = true;
@@ -39,8 +40,11 @@ public class Necromancer {
         // Register the Deferred Register to the mod event bus so blocks get registered
         ModBlocks.BLOCKS.register(bus);
         ModBlockGroups.init();
+
         // Register the Deferred Register to the mod event bus so items get registered
         ModCommonItems.ITEMS.register(bus);
+
+        ModBlockEntities.BLOCK_ENTITIES.register(bus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         ModCreativeModeTabs.CREATIVE_MODE_TABS.register(bus);
 
