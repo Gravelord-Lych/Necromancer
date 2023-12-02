@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-29T00:14:47.941807	Block States: necromancer
+// 1.20.2	2023-12-02T11:57:32.8478302	Block States: necromancer
 930151a2543e228c84fee3d038ca9411666e7a74 assets/necromancer/blockstates/cracked_necrock_bricks.json
 2df63370cdb0ca1c63a008b2425083017c61c431 assets/necromancer/blockstates/cracked_necrock_bricks_slab.json
 572c1c4a8e09cf19c4ab8cf0e7c44c4ef39b64f7 assets/necromancer/blockstates/cracked_necrock_bricks_stairs.json
@@ -8,6 +8,7 @@ e6e8e7200503d51111f24027c4b08730f28d7625 assets/necromancer/blockstates/necrock.
 a96a7312264f6ffae2fabcac43e677c5622b15ec assets/necromancer/blockstates/necrock_bricks_slab.json
 5a6955280884b7a1bd7c492a11b8fb244617c902 assets/necromancer/blockstates/necrock_bricks_stairs.json
 01e1754d0d5c1bb4a96ed1f13f439030e246b998 assets/necromancer/blockstates/necrock_bricks_wall.json
+8a14353c3e836dacdab0d5c377278293afe0daa9 assets/necromancer/blockstates/necrock_item_base.json
 08fb9db87b2b5746f2b8e39589ff0fcd8cd9c240 assets/necromancer/blockstates/necrock_item_carrier.json
 b6f8f824cffe465f2c7e5fd011412fd7f8c54e1d assets/necromancer/blockstates/necrock_slab.json
 f983029931a68f9f42900610d32028b857f02775 assets/necromancer/blockstates/necrock_stairs.json
@@ -38,7 +39,8 @@ d3f92462d75601e0b5e85fa0fe43a79ef0acf1f9 assets/necromancer/models/block/necrock
 d684b086f8ea49a3dd2477bd291647fc287eda54 assets/necromancer/models/block/necrock_bricks_wall_post.json
 fde09bb334a5b529274cb609be8203e50b60a1d6 assets/necromancer/models/block/necrock_bricks_wall_side.json
 9a5fd6b7406fe24739739d2b9154b10f7703f666 assets/necromancer/models/block/necrock_bricks_wall_side_tall.json
-4bb9e45801715fecc2afc3539e7b310c54557622 assets/necromancer/models/block/necrock_item_carrier.json
+b75079dd0cdb6401f463dc109239be924891dc1a assets/necromancer/models/block/necrock_item_base.json
+96fcbc9ba19dc255439295b3d02dd6dc6ae24f7d assets/necromancer/models/block/necrock_item_carrier.json
 0e56cb0a1a84b3a6cbb80c3f863d8f94f107f50f assets/necromancer/models/block/necrock_slab.json
 e793f924b82ad0e681017a79fc685d4807ba1e47 assets/necromancer/models/block/necrock_slab_top.json
 a7148bc2fac987e9598976323e52f7d35bc404a1 assets/necromancer/models/block/necrock_stairs.json

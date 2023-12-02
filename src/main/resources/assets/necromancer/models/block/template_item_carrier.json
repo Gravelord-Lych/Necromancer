@@ -1,9 +1,6 @@
 {
-	"parent": "block/block",
 	"credit": "Made with Blockbench",
-	"textures": {
-		"particle": "necromancer:block/polished_necrock"
-	},
+	"parent": "block/block",
 	"elements": [
 		{
 			"from": [1, 0, 1],

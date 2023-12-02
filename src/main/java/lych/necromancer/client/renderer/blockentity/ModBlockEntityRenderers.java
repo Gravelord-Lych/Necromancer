@@ -15,6 +15,7 @@ public final class ModBlockEntityRenderers {
 
     @SubscribeEvent
     public static void registerBlockEntityRenderers(FMLClientSetupEvent event) {
+        register(ModBlockEntities.NECROCK_ITEM_BASE.get(), NecrockItemBaseRenderer::new);
         register(ModBlockEntities.NECROCK_ITEM_CARRIER.get(), NecrockItemCarrierRenderer::new);
     }
 }

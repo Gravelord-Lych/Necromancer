@@ -5,11 +5,15 @@ import lych.necromancer.block.ModBlockGroups;
 import lych.necromancer.block.ModBlocks;
 import lych.necromancer.item.ModCommonItems;
 import lych.necromancer.item.ModSpecialItems;
+import lych.necromancer.sound.ModSoundEvents;
 import lych.necromancer.util.KeepInventoryHelper;
 import lych.necromancer.util.tab.ModCreativeModeTabNames;
 import lych.necromancer.util.tab.ModCreativeModeTabs;
 import net.minecraft.data.PackOutput;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.common.data.LanguageProvider;
+
+import java.util.function.Supplier;
 
 public abstract class LangDataGen extends LanguageProvider {
     public LangDataGen(PackOutput output, String locale) {
@@ -27,6 +31,7 @@ public abstract class LangDataGen extends LanguageProvider {
             addBlocks();
             addItemGroups();
             addMisc();
+            addSubtitles();
         }
 
         private void addItems() {
@@ -42,6 +47,7 @@ public abstract class LangDataGen extends LanguageProvider {
             addBlock(ModBlockGroups.CRACKED_NECROCK_BRICKS.stairs(), "Cracked Necrock Brick Stairs");
             addBlock(ModBlockGroups.CRACKED_NECROCK_BRICKS.wall(), "Cracked Necrock Brick Wall");
             addBlock(ModBlocks.NECROITE_BLOCK, "Necroite Block");
+            addBlock(ModBlocks.NECROCK_ITEM_BASE, "Necroite Item Base");
             addBlock(ModBlocks.NECROCK_ITEM_CARRIER, "Necroite Item Carrier");
             addBlock(ModBlockGroups.NECROCK.base(), "Necrock");
             addBlock(ModBlockGroups.NECROCK.slab(), "Necrock Slab");
@@ -69,6 +75,17 @@ public abstract class LangDataGen extends LanguageProvider {
             add(KeepInventoryHelper.PlayerState.INFINITY.getMessageId(), "Infinity");
             add(KeepInventoryHelper.PlayerState.DEPLETED.getMessageId(), "Keep-Inventory times have been used up");
             add(KeepInventoryHelper.PlayerState.RULE_ENABLED.getMessageId(), "Gamerule keepInventory is true");
+        }
+
+        private void addSubtitles() {
+            add(ModSoundEvents.NECROCK_ITEM_BASE_PLACE, "Necrock Item Base fills");
+            add(ModSoundEvents.NECROCK_ITEM_BASE_REMOVE, "Necrock Item Base empties");
+            add(ModSoundEvents.NECROCK_ITEM_CARRIER_PLACE, "Necrock Item Carrier fills");
+            add(ModSoundEvents.NECROCK_ITEM_CARRIER_REMOVE, "Necrock Item Carrier empties");
+        }
+
+        private void add(Supplier<SoundEvent> soundSup, String name) {
+            add(SoundDataGen.makeSubtitle(soundSup), name);
         }
     }
 }

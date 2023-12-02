@@ -45,9 +45,7 @@ public abstract class AbstractBlockGroup implements BlockGroup {
     }
 
     @Override
-    public void generateAdditionalRecipes(RecipeOutput output) {
-
-    }
+    public void generateAdditionalRecipes(RecipeOutput output) {}
 
     @Override
     public void applyCommonTags(Function<? super TagKey<Block>, ? extends IntrinsicHolderTagsProvider.IntrinsicTagAppender<Block>> tagger) {}

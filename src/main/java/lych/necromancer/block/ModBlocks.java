@@ -23,6 +23,7 @@ public final class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Necromancer.MODID);
     private static final Map<BlockEntry<?, ?>, BlockGroup> GROUPS = new HashMap<>();
     public static final BlockEntry<Block, BlockItem> NECROITE_BLOCK = create(ModBlockNames.NECROITE_BLOCK, using(p -> p.mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(5, 6).sound(SoundType.METAL)));
+    public static final BlockEntry<NecrockItemCarrierBlock, BlockItem> NECROCK_ITEM_BASE = create(ModBlockNames.NECROCK_ITEM_BASE, () -> new NecrockItemBaseBlock(by(PropertiesCreator::createNecrockProperties)));
     public static final BlockEntry<NecrockItemCarrierBlock, BlockItem> NECROCK_ITEM_CARRIER = create(ModBlockNames.NECROCK_ITEM_CARRIER, () -> new NecrockItemCarrierBlock(by(PropertiesCreator::createNecrockProperties)));
 
     private ModBlocks() {}

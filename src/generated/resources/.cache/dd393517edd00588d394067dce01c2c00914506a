@@ -1,6 +1,6 @@
-// 1.20.2	2023-11-28T00:23:46.776926	Tags for minecraft:block mod id necromancer
-ad640d1bb28209368232e9d0e8f7f6674eafda51 data/forge/tags/blocks/stone.json
-97f27ec913cd2d0ee65fd697d9eaaa2e985e6029 data/minecraft/tags/blocks/mineable/pickaxe.json
+// 1.20.2	2023-12-02T11:57:32.8426593	Tags for minecraft:block mod id necromancer
+4fb31d2a8baa04709fecc9ae4c0eb33d6110a779 data/forge/tags/blocks/stone.json
+62bce5df23c72188c4d17e4c1cca6ab4a1444424 data/minecraft/tags/blocks/mineable/pickaxe.json
 7aebabfa6ece434ba3f5b0e1e2f2664465c006f7 data/minecraft/tags/blocks/needs_iron_tool.json
 a748ee6dadf56d535578e50c7e8a61dc41645f7d data/minecraft/tags/blocks/slabs.json
 f60600acd85cacd1c42b09e4cb6d004eac11d8d4 data/minecraft/tags/blocks/stairs.json

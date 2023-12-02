@@ -5,7 +5,10 @@ import lych.necromancer.block.ModBlockGroups;
 import lych.necromancer.block.ModBlocks;
 import lych.necromancer.block.entity.ModBlockEntities;
 import lych.necromancer.item.ModCommonItems;
+import lych.necromancer.sound.ModSoundEvents;
 import lych.necromancer.util.tab.ModCreativeModeTabs;
+import lych.necromancer.world.crafting.ModRecipeSerializers;
+import lych.necromancer.world.crafting.ModRecipeTypes;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -37,16 +40,14 @@ public class Necromancer {
         // Register the commonSetup method for modloading
         bus.addListener(this::commonSetup);
 
-        // Register the Deferred Register to the mod event bus so blocks get registered
         ModBlocks.BLOCKS.register(bus);
         ModBlockGroups.init();
-
-        // Register the Deferred Register to the mod event bus so items get registered
         ModCommonItems.ITEMS.register(bus);
-
         ModBlockEntities.BLOCK_ENTITIES.register(bus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
         ModCreativeModeTabs.CREATIVE_MODE_TABS.register(bus);
+        ModRecipeTypes.RECIPE_TYPES.register(bus);
+        ModRecipeSerializers.RECIPE_SERIALIZERS.register(bus);
+        ModSoundEvents.SOUND_EVENTS.register(bus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

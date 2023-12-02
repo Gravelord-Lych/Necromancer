@@ -19,7 +19,10 @@ public final class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Necromancer.MODID);
     public static final RegistryObject<BlockEntityType<NecrockItemCarrierBlockEntity>> NECROCK_ITEM_CARRIER =
             BLOCK_ENTITIES.register(ModBlockNames.NECROCK_ITEM_CARRIER, make(NecrockItemCarrierBlockEntity::new, ModBlocks.NECROCK_ITEM_CARRIER));
+    public static final RegistryObject<BlockEntityType<NecrockItemBaseBlockEntity>> NECROCK_ITEM_BASE =
+            BLOCK_ENTITIES.register(ModBlockNames.NECROCK_ITEM_BASE, make(NecrockItemBaseBlockEntity::new, ModBlocks.NECROCK_ITEM_BASE));
 
+    @SuppressWarnings("DataFlowIssue")
     @NotNull
     private static <T extends BlockEntity> Supplier<BlockEntityType<T>> make(BlockEntityType.BlockEntitySupplier<? extends T> sup, BlockEntry<?, ?>... blocks) {
         return () -> BlockEntityType.Builder.<T>of(sup, Arrays.stream(blocks).map(BlockEntry::get).toArray(Block[]::new)).build(null);

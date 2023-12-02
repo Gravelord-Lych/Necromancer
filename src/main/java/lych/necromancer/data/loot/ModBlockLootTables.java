@@ -23,6 +23,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.NECROITE_BLOCK);
+        dropSelf(ModBlocks.NECROCK_ITEM_BASE);
         dropSelf(ModBlocks.NECROCK_ITEM_CARRIER);
         ModBlockGroups.NECROCK.forAllEntries(this::dropSelf);
         ModBlockGroups.POLISHED_NECROCK.forAllEntries(this::dropSelf);

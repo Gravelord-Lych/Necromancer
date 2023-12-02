@@ -16,11 +16,11 @@ public abstract class AbstractBlockEntityRenderer<T extends BlockEntity> impleme
         this.ctx = ctx;
     }
 
-    protected static void translateToCenter(PoseStack stack) {
-        stack.pushPose();
-        stack.translate(0.5F, 0.0F, 0.5F);
+    protected static void translateToCenter(PoseStack poseStack) {
+        poseStack.pushPose();
+        poseStack.translate(0.5F, 0, 0.5F);
     }
 
     @Override
-    public abstract void render(T carrier, float partialTicks, PoseStack stack, MultiBufferSource source, int lightColor, int overlayTexture);
+    public abstract void render(T carrier, float partialTicks, PoseStack poseStack, MultiBufferSource source, int lightColor, int overlayTexture);
 }

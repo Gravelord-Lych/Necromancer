@@ -8,6 +8,7 @@
   "block.necromancer.necrock_bricks_slab": "Necrock Brick Slab",
   "block.necromancer.necrock_bricks_stairs": "Necrock Brick Stairs",
   "block.necromancer.necrock_bricks_wall": "Necrock Brick Wall",
+  "block.necromancer.necrock_item_base": "Necroite Item Base",
   "block.necromancer.necrock_item_carrier": "Necroite Item Carrier",
   "block.necromancer.necrock_slab": "Necrock Slab",
   "block.necromancer.necrock_stairs": "Necrock Stairs",
@@ -28,5 +29,9 @@
   "message.necromancer.keep_inventory_time.player_state.depleted": "Keep-Inventory times have been used up",
   "message.necromancer.keep_inventory_time.player_state.infinity": "Infinity",
   "message.necromancer.keep_inventory_time.player_state.ready": "%d",
-  "message.necromancer.keep_inventory_time.player_state.rule_enabled": "Gamerule keepInventory is true"
+  "message.necromancer.keep_inventory_time.player_state.rule_enabled": "Gamerule keepInventory is true",
+  "necromancer:subtitle.necrock_item_base.place": "Necrock Item Base fills",
+  "necromancer:subtitle.necrock_item_base.remove": "Necrock Item Base empties",
+  "necromancer:subtitle.necrock_item_carrier.place": "Necrock Item Carrier fills",
+  "necromancer:subtitle.necrock_item_carrier.remove": "Necrock Item Carrier empties"
 }

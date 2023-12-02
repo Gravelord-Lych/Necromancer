@@ -49,6 +49,9 @@ public interface IDarkPowerStorage {
     }
 
     default boolean extractDarkPower(int amount) {
+        if (amount <= 0) {
+            return true;
+        }
         if (getDarkPower() < amount) {
             return false;
         }

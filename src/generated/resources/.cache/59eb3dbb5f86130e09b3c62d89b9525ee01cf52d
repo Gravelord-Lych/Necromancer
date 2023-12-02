@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-28T00:23:46.788539	Loot Tables
+// 1.20.2	2023-12-02T11:57:32.8468265	Loot Tables
 5c0b718131d3f9868047d07e8a25d30f56161643 data/necromancer/loot_tables/blocks/cracked_necrock_bricks.json
 59089c3d60c5740724b3404402b0b07cc96f274f data/necromancer/loot_tables/blocks/cracked_necrock_bricks_slab.json
 cfe460438f422d84223a5e2c1ecf38bc569b7222 data/necromancer/loot_tables/blocks/cracked_necrock_bricks_stairs.json
@@ -8,6 +8,7 @@ ee8e028f84c3d3e50b15ecf0f73bc9d1decec4b1 data/necromancer/loot_tables/blocks/nec
 0e1660c117f3070aafd710f259b8461cc371075b data/necromancer/loot_tables/blocks/necrock_bricks_slab.json
 096017cc658f3ce9ccea2912ce4b610df51e065c data/necromancer/loot_tables/blocks/necrock_bricks_stairs.json
 9277479341cad5b9d3c579b47e8754661d91c625 data/necromancer/loot_tables/blocks/necrock_bricks_wall.json
+64fca3a6e10b87288697f758482d819379c2cb2d data/necromancer/loot_tables/blocks/necrock_item_base.json
 b7587e1a67f12b3cb72d9a8d1eb3673b91784c3e data/necromancer/loot_tables/blocks/necrock_item_carrier.json
 e70807f9b90370f12d91d822cf71e1c62e11c3ce data/necromancer/loot_tables/blocks/necrock_slab.json
 d59a59b02fc11d10c2338a9e84740d2499324a5e data/necromancer/loot_tables/blocks/necrock_stairs.json

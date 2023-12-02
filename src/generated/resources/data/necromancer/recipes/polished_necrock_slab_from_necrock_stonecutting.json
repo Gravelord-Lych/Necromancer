@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "necromancer:necrock"
+  },
+  "result": "necromancer:polished_necrock_slab"
+}

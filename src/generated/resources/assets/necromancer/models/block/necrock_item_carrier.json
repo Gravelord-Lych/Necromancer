@@ -1,6 +1,7 @@
 {
   "parent": "necromancer:block/template_item_carrier",
   "textures": {
+    "particle": "necromancer:block/polished_necrock",
     "top": "necromancer:block/polished_necrock"
   }
 }

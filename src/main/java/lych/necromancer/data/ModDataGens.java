@@ -32,5 +32,6 @@ public final class ModDataGens {
         gen.addProvider(event.includeClient(), new BlockStateDataGen(output, helper));
         gen.addProvider(event.includeClient(), new ItemModelDataGen(output, helper));
         gen.addProvider(event.includeClient(), new LangDataGen.EnUs(output));
+        gen.addProvider(event.includeClient(), new SoundDataGen(output, helper));
     }
 }
