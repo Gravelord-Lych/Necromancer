@@ -1,5 +1,6 @@
 package lych.necromancer.world.crafting;
 
+import lych.necromancer.Necromancer;
 import lych.necromancer.block.entity.ModBlockEntities;
 import lych.necromancer.block.entity.NecrockItemBaseBlockEntity;
 import lych.necromancer.block.entity.NecrockItemCarrierBlockEntity;
@@ -12,6 +13,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,6 +22,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Altar implements NecrocraftingContainer {
+    private static final Marker ALTAR_MARKER = MarkerFactory.getMarker("Altar");
     private final Level level;
     private final BlockPos basePos;
     private final List<BlockPos> carrierPos;
@@ -72,6 +76,9 @@ public class Altar implements NecrocraftingContainer {
         }
         Optional<AbstractNecrocraftingRecipe> ordered = server.getRecipeManager().getRecipeFor(ModRecipeTypes.ORDERED_NECROCRAFTING.get(), this, level).map(RecipeHolder::value);
         Optional<AbstractNecrocraftingRecipe> unordered = server.getRecipeManager().getRecipeFor(ModRecipeTypes.UNORDERED_NECROCRAFTING.get(), this, level).map(RecipeHolder::value);
+        if (ordered.isPresent() && unordered.isPresent()) {
+            Necromancer.LOGGER.warn(ALTAR_MARKER, "Both ordered necrocrafting recipe and unordered necrocrafting recipe is present in {}", this);
+        }
         return ordered.isPresent() ? ordered : unordered;
     }
 
@@ -85,5 +92,10 @@ public class Altar implements NecrocraftingContainer {
 
     public Optional<NecrockItemCarrierBlockEntity> getCarrierBlockEntity(int index) {
         return level.getBlockEntity(carrierPos.get(index), ModBlockEntities.NECROCK_ITEM_CARRIER.get());
+    }
+
+    @Override
+    public String toString() {
+        return "Altar[Base: %s, Carriers: %s, Level: %s]".formatted(basePos, carrierPos, level.dimension().location());
     }
 }

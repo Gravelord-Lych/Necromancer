@@ -11,6 +11,8 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +23,7 @@ import java.util.stream.Stream;
 
 public final class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Necromancer.MODID);
+    private static final Marker BLOCKS_MARKER = MarkerFactory.getMarker("Blocks");
     private static final Map<BlockEntry<?, ?>, BlockGroup> GROUPS = new HashMap<>();
     public static final BlockEntry<Block, BlockItem> NECROITE_BLOCK = create(ModBlockNames.NECROITE_BLOCK, using(p -> p.mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(5, 6).sound(SoundType.METAL)));
     public static final BlockEntry<NecrockItemCarrierBlock, BlockItem> NECROCK_ITEM_BASE = create(ModBlockNames.NECROCK_ITEM_BASE, () -> new NecrockItemBaseBlock(by(PropertiesCreator::createNecrockProperties)));
@@ -45,7 +48,7 @@ public final class ModBlocks {
     }
 
     public static <B extends Block> BlockEntry<B, BlockItem> create(String name, Supplier<? extends B> sup) {
-        Necromancer.LOGGER.info("Registered {}", name);
+        Necromancer.LOGGER.debug(BLOCKS_MARKER, "Registered block entry {}", name);
 
         return create(name, sup, blockSup -> ModCommonItems.createDefaultBlockItem(blockSup.get()));
     }
