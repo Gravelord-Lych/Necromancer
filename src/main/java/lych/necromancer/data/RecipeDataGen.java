@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import lych.necromancer.Necromancer;
 import lych.necromancer.block.ModBlockGroups;
 import lych.necromancer.block.ModBlocks;
-import lych.necromancer.data.recipes.OrderedNecrocraftingRecipeBuilder;
+import lych.necromancer.data.recipes.NecrocraftingRecipeBuilder;
 import lych.necromancer.item.ModCommonItems;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
@@ -53,11 +53,17 @@ public class RecipeDataGen extends RecipeProvider {
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, ModBlockGroups.NECROCK_BRICKS.base().get(), ModBlockGroups.NECROCK.base().get());
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, ModBlockGroups.NECROCK_BRICKS.slab().get(), ModBlockGroups.NECROCK.base().get(), 2);
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, ModBlockGroups.NECROCK_BRICKS.stairs().get(), ModBlockGroups.NECROCK.base().get());
-        OrderedNecrocraftingRecipeBuilder.ordered(Ingredient.of(Items.COAL), RecipeCategory.MISC, Items.DIAMOND)
+        NecrocraftingRecipeBuilder.ordered(Ingredient.of(Items.COAL), RecipeCategory.MISC, Items.DIAMOND)
                 .cycleCarrierIngredients(4, Ingredient.of(Items.IRON_NUGGET), Ingredient.of(Items.GOLD_NUGGET))
                 .energyCost(100)
                 .unlockedBy(getHasName(Items.COAL), has(Items.COAL))
                 .save(output, Necromancer.prefix("test_recipe_of_ordered_necrocrafting"));
+
+        NecrocraftingRecipeBuilder.unordered(Ingredient.of(Items.DIAMOND), RecipeCategory.MISC, Items.COAL)
+                .carrierIngredients(Ingredient.of(Items.DIAMOND, Items.EMERALD), Ingredient.of(Items.GOLD_NUGGET), Ingredient.of(Items.GOLD_NUGGET, Items.IRON_NUGGET), Ingredient.of(Items.IRON_NUGGET))
+                .energyCost(5000)
+                .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
+                .save(output, Necromancer.prefix("test_recipe_of_unordered_necrocrafting"));
     }
 
     protected static void nineBlockStorageRecipes(RecipeOutput output, RecipeCategory category, ItemLike small, RecipeCategory smallToBigCategory, ItemLike big) {

@@ -21,7 +21,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import javax.annotation.Nullable;
 import java.util.*;
 
-public class OrderedNecrocraftingRecipeBuilder implements RecipeBuilder {
+public class NecrocraftingRecipeBuilder implements RecipeBuilder {
     private final RecipeCategory category;
     private final Item result;
     private final Ingredient baseIngredient;
@@ -35,7 +35,7 @@ public class OrderedNecrocraftingRecipeBuilder implements RecipeBuilder {
     private int energyCost;
     private final RecipeSerializer<?> type;
 
-    public OrderedNecrocraftingRecipeBuilder(RecipeCategory category, RecipeSerializer<?> type, Ingredient baseIngredient, ItemLike result, int count) {
+    public NecrocraftingRecipeBuilder(RecipeCategory category, RecipeSerializer<?> type, Ingredient baseIngredient, ItemLike result, int count) {
         this.category = category;
         this.type = type;
         this.result = result.asItem();
@@ -43,44 +43,52 @@ public class OrderedNecrocraftingRecipeBuilder implements RecipeBuilder {
         this.count = count;
     }
 
-    public static OrderedNecrocraftingRecipeBuilder ordered(Ingredient ingredient, RecipeCategory category, ItemLike result) {
+    public static NecrocraftingRecipeBuilder ordered(Ingredient ingredient, RecipeCategory category, ItemLike result) {
         return ordered(ingredient, category, result, 1);
     }
 
-    public static OrderedNecrocraftingRecipeBuilder ordered(Ingredient baseIngredient, RecipeCategory category, ItemLike result, int count) {
-        return new OrderedNecrocraftingRecipeBuilder(category, ModRecipeSerializers.ORDERED_NECROCRAFTING.get(), baseIngredient, result, count);
+    public static NecrocraftingRecipeBuilder ordered(Ingredient baseIngredient, RecipeCategory category, ItemLike result, int count) {
+        return new NecrocraftingRecipeBuilder(category, ModRecipeSerializers.ORDERED_NECROCRAFTING.get(), baseIngredient, result, count);
     }
 
-    public OrderedNecrocraftingRecipeBuilder cycleCarrierIngredients(int count, Ingredient... ingredients) {
+    public static NecrocraftingRecipeBuilder unordered(Ingredient ingredient, RecipeCategory category, ItemLike result) {
+        return unordered(ingredient, category, result, 1);
+    }
+
+    public static NecrocraftingRecipeBuilder unordered(Ingredient baseIngredient, RecipeCategory category, ItemLike result, int count) {
+        return new NecrocraftingRecipeBuilder(category, ModRecipeSerializers.UNORDERED_NECROCRAFTING.get(), baseIngredient, result, count);
+    }
+
+    public NecrocraftingRecipeBuilder cycleCarrierIngredients(int count, Ingredient... ingredients) {
         for (int i = 0; i < count; i++) {
             carrierIngredients(ingredients);
         }
         return this;
     }
 
-    public OrderedNecrocraftingRecipeBuilder carrierIngredients(Ingredient... ingredients) {
+    public NecrocraftingRecipeBuilder carrierIngredients(Ingredient... ingredients) {
         carrierIngredients.addAll(List.of(ingredients));
         return this;
     }
 
-    public OrderedNecrocraftingRecipeBuilder energyCost(int energyCost) {
+    public NecrocraftingRecipeBuilder energyCost(int energyCost) {
         this.energyCost = energyCost;
         return this;
     }
 
     @Override
-    public OrderedNecrocraftingRecipeBuilder unlockedBy(String name, Criterion<?> criterion) {
+    public NecrocraftingRecipeBuilder unlockedBy(String name, Criterion<?> criterion) {
         criteria.put(name, criterion);
         return this;
     }
 
     @Override
-    public OrderedNecrocraftingRecipeBuilder group(@Nullable String group) {
+    public NecrocraftingRecipeBuilder group(@Nullable String group) {
         this.group = group;
         return this;
     }
 
-    public OrderedNecrocraftingRecipeBuilder condition(ICondition condition) {
+    public NecrocraftingRecipeBuilder condition(ICondition condition) {
         this.condition = condition;
         return this;
     }

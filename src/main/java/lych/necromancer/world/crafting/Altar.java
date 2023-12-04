@@ -70,8 +70,9 @@ public class Altar implements NecrocraftingContainer {
         if (server == null) {
             return Optional.empty();
         }
-        ItemStack baseItem = getBaseItem();
-        return server.getRecipeManager().getRecipeFor(ModRecipeTypes.ORDERED_NECROCRAFTING.get(), this, level).map(RecipeHolder::value);
+        Optional<AbstractNecrocraftingRecipe> ordered = server.getRecipeManager().getRecipeFor(ModRecipeTypes.ORDERED_NECROCRAFTING.get(), this, level).map(RecipeHolder::value);
+        Optional<AbstractNecrocraftingRecipe> unordered = server.getRecipeManager().getRecipeFor(ModRecipeTypes.UNORDERED_NECROCRAFTING.get(), this, level).map(RecipeHolder::value);
+        return ordered.isPresent() ? ordered : unordered;
     }
 
     public Optional<NecrockItemBaseBlockEntity> getBaseBlockEntity() {

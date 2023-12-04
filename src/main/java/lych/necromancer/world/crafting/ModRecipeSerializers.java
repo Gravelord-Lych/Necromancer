@@ -10,6 +10,8 @@ public final class ModRecipeSerializers {
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Necromancer.MODID);
     public static final RegistryObject<RecipeSerializer<OrderedNecrocraftingRecipe>> ORDERED_NECROCRAFTING =
             RECIPE_SERIALIZERS.register(ModRecipeNames.ORDERED_NECROCRAFTING, OrderedNecrocraftingRecipe.Serializer::new);
+    public static final RegistryObject<RecipeSerializer<UnorderedNecrocraftingRecipe>> UNORDERED_NECROCRAFTING =
+            RECIPE_SERIALIZERS.register(ModRecipeNames.UNORDERED_NECROCRAFTING, UnorderedNecrocraftingRecipe.Serializer::new);
 
     private ModRecipeSerializers() {}
 }

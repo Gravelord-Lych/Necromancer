@@ -1,0 +1,33 @@
+{
+  "type": "necromancer:unordered_necrocrafting",
+  "base_ingredient": {
+    "item": "minecraft:diamond"
+  },
+  "carrier_ingredients": [
+    [
+      {
+        "item": "minecraft:diamond"
+      },
+      {
+        "item": "minecraft:emerald"
+      }
+    ],
+    {
+      "item": "minecraft:gold_nugget"
+    },
+    [
+      {
+        "item": "minecraft:gold_nugget"
+      },
+      {
+        "item": "minecraft:iron_nugget"
+      }
+    ],
+    {
+      "item": "minecraft:iron_nugget"
+    }
+  ],
+  "count": 1,
+  "dp": 5000,
+  "result": "minecraft:coal"
+}
