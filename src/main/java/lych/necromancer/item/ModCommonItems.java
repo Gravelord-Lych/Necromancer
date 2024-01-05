@@ -20,6 +20,7 @@ public final class ModCommonItems {
 
     static {
         ModSpecialItems.init();
+        ModSpawnEggs.init();
     }
 
     private ModCommonItems() {}

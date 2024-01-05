@@ -1,4 +1,4 @@
-// 1.20.2	2023-12-02T11:57:32.8456629	Item Models: necromancer
+// 1.20.2	2023-12-17T11:11:06.7799955	Item Models: necromancer
 bfb54594bd6c5bdcdb26f9e37afb1da8505e41b5 assets/necromancer/models/item/cracked_necrock_bricks.json
 f57ae0e2640226ab49ef9474968986dad15cf807 assets/necromancer/models/item/cracked_necrock_bricks_slab.json
 28c9583cf184afe64940e45771565361b9a58380 assets/necromancer/models/item/cracked_necrock_bricks_stairs.json
@@ -23,6 +23,7 @@ a08c47a671535db54b95e2196fbf2b7e28777a64 assets/necromancer/models/item/necrowan
 f4ab1ff6fb9b2eaaae8e68e03f03fb48ee8df1e9 assets/necromancer/models/item/necrowand_lv3.json
 1be55cdf1da886dccf4453323e85a7fc6d87b9a2 assets/necromancer/models/item/necrowand_lv4.json
 65b1f023cd1e326e452d585f59c0d4ca473fbe8e assets/necromancer/models/item/necrowand_lv5.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/necromancer/models/item/necro_golem_spawn_egg.json
 4c974bf5f750fd0778a2ad9abdae7850023d8da2 assets/necromancer/models/item/polished_necrock.json
 3d98657a57002b559a95ed3ef861847148133489 assets/necromancer/models/item/polished_necrock_slab.json
 b7ed00e2a07fa1ed05beeeafb81abf3cb5844f8a assets/necromancer/models/item/polished_necrock_stairs.json

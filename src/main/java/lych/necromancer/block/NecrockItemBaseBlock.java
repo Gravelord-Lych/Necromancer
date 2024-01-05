@@ -4,6 +4,8 @@ import lych.necromancer.block.entity.ModBlockEntities;
 import lych.necromancer.block.entity.NecrockItemBaseBlockEntity;
 import lych.necromancer.capability.IDarkPowerStorage;
 import lych.necromancer.item.ModSpecialItems;
+import lych.necromancer.sound.ModSoundEvents;
+import lych.necromancer.util.DarkPowerHelper;
 import lych.necromancer.world.crafting.AbstractNecrocraftingRecipe;
 import lych.necromancer.world.crafting.Altar;
 import net.minecraft.core.BlockPos;
@@ -56,7 +58,7 @@ public final class NecrockItemBaseBlock extends NecrockItemCarrierBlock {
                     AbstractNecrocraftingRecipe recipe = optionalRecipe.get().get();
 
                     int energyCost = recipe.getEnergyCost();
-                    IDarkPowerStorage dps = IDarkPowerStorage.of(wand);
+                    IDarkPowerStorage dps = DarkPowerHelper.of(wand);
 
                     if (dps.extractDarkPower(energyCost)) {
                         Altar altar = Objects.requireNonNull(base.getAltar());
@@ -65,6 +67,7 @@ public final class NecrockItemBaseBlock extends NecrockItemCarrierBlock {
                         altar.getCarrierBlockEntities()
                                 .flatMap(Optional::stream)
                                 .forEach(carrier -> carrier.setItemInside(carrier.getItemInside().getCraftingRemainingItem()));
+                        level.playSound(null, pos, ModSoundEvents.NECROCRAFT_FINISHED.get(), player.getSoundSource(), 1, 1);
 
                         return InteractionResult.CONSUME;
                     }

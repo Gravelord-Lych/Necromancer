@@ -6,6 +6,7 @@ import lych.necromancer.block.BlockGroup;
 import lych.necromancer.block.ModBlockGroups;
 import lych.necromancer.block.ModBlocks;
 import lych.necromancer.item.ModCommonItems;
+import lych.necromancer.item.ModSpawnEggs;
 import lych.necromancer.item.NecrowandItem;
 import lych.necromancer.util.ReflectionUtils;
 import net.minecraft.core.registries.Registries;
@@ -56,6 +57,7 @@ public final class ModCreativeModeTabs {
 
     private static void addCommonItems(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output output) {
         iterateItems(ModCommonItems.class, output);
+        iterateItems(ModSpawnEggs.class, output);
     }
 
     private static void addBlockItems(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output output) {

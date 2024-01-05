@@ -4,11 +4,14 @@ import com.mojang.logging.LogUtils;
 import lych.necromancer.block.ModBlockGroups;
 import lych.necromancer.block.ModBlocks;
 import lych.necromancer.block.entity.ModBlockEntities;
+import lych.necromancer.entity.ModEntities;
 import lych.necromancer.item.ModCommonItems;
+import lych.necromancer.network.syncher.ModEntityDataSerializers;
 import lych.necromancer.sound.ModSoundEvents;
 import lych.necromancer.util.tab.ModCreativeModeTabs;
 import lych.necromancer.world.crafting.ModRecipeSerializers;
 import lych.necromancer.world.crafting.ModRecipeTypes;
+import lych.necromancer.world.level.ModGameRules;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -44,10 +47,12 @@ public class Necromancer {
         ModBlockGroups.init();
         ModCommonItems.ITEMS.register(bus);
         ModBlockEntities.BLOCK_ENTITIES.register(bus);
+        ModEntities.ENTITIES.register(bus);
         ModCreativeModeTabs.CREATIVE_MODE_TABS.register(bus);
         ModRecipeTypes.RECIPE_TYPES.register(bus);
         ModRecipeSerializers.RECIPE_SERIALIZERS.register(bus);
         ModSoundEvents.SOUND_EVENTS.register(bus);
+        ModEntityDataSerializers.DATA_SERIALIZERS.register(bus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -57,6 +62,7 @@ public class Necromancer {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
+        ModGameRules.init();
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -70,12 +76,20 @@ public class Necromancer {
         return new ResourceLocation(MODID, name);
     }
 
+    public static ResourceLocation prefixTex(String name) {
+        return prefix("textures/" + name);
+    }
+
     public static String prefixMsg(String name) {
         return prefixMsg(MESSAGE_PREFIX, name);
     }
 
     public static String prefixMsg(String type, String name) {
         return type + "." + MODID + "." + name;
+    }
+
+    public static String prefixCmd(String type, String name) {
+        return prefixMsg("commands", type + "." + name);
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

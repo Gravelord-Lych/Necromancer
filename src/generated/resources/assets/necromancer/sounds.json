@@ -1,4 +1,43 @@
 {
+  "necro_golem.ambient": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.zombie.ambient",
+        "pitch": 0.55
+      }
+    ],
+    "subtitle": "necromancer:subtitle.necro_golem.ambient"
+  },
+  "necro_golem.death": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.zombie.death",
+        "pitch": 0.55
+      }
+    ],
+    "subtitle": "necromancer:subtitle.necro_golem.death"
+  },
+  "necro_golem.hurt": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.zombie.hurt",
+        "pitch": 0.55
+      }
+    ],
+    "subtitle": "necromancer:subtitle.necro_golem.hurt"
+  },
+  "necro_golem.step": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.zombie.step"
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "necrock_item_base.place": {
     "sounds": [
       {
@@ -34,5 +73,14 @@
       }
     ],
     "subtitle": "necromancer:subtitle.necrock_item_carrier.remove"
+  },
+  "necrocraft.finished": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "block.enchantment_table.use"
+      }
+    ],
+    "subtitle": "necromancer:subtitle.necrocraft.finished"
   }
 }

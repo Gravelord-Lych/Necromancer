@@ -1,20 +1,23 @@
 package lych.necromancer.item;
 
 import lych.necromancer.Necromancer;
-import lych.necromancer.capability.IDarkPowerStorage;
 import lych.necromancer.capability.ItemDarkPowerStorage;
 import lych.necromancer.capability.ModCapabilities;
+import lych.necromancer.util.DarkPowerHelper;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.UUID;
 
 public class NecrowandItem extends Item {
@@ -106,16 +109,12 @@ public class NecrowandItem extends Item {
 
     @Override
     public int getBarWidth(ItemStack stack) {
-        IDarkPowerStorage dps = IDarkPowerStorage.of(stack);
-        float dp = (float) dps.getDarkPower() / dps.getMaxStorage();
-        return Math.round(dp * MAX_BAR_WIDTH);
+        return DarkPowerHelper.calculateBarWidth(stack);
     }
 
     @Override
     public int getBarColor(ItemStack stack) {
-        IDarkPowerStorage dps = IDarkPowerStorage.of(stack);
-        float dp = (float) dps.getDarkPower() / dps.getMaxStorage();
-        return Mth.hsvToRgb(Mth.lerp(dp, 270, 300) / 360, Mth.lerp(dp, 0.75f, 1), Mth.lerp(dp, 0.85f, 1));
+        return DarkPowerHelper.calculateBarColor(stack);
     }
 
     @Override
@@ -134,5 +133,11 @@ public class NecrowandItem extends Item {
             case 5 -> ModRarities.LEGENDARY;
             default -> throw new IllegalStateException("Invalid necrowand level: " + level);
         };
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> text, TooltipFlag flag) {
+        super.appendHoverText(stack, level, text, flag);
+        DarkPowerHelper.appendDPMessage(stack, text);
     }
 }

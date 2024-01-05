@@ -5,6 +5,7 @@ import lych.necromancer.block.BlockEntry;
 import lych.necromancer.block.BlockGroup;
 import lych.necromancer.block.ModBlockGroups;
 import lych.necromancer.block.ModBlocks;
+import lych.necromancer.item.ModSpawnEggs;
 import lych.necromancer.item.NecrowandItem;
 import lych.necromancer.util.ReflectionUtils;
 import net.minecraft.data.PackOutput;
@@ -18,6 +19,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Objects;
 
@@ -56,6 +58,16 @@ public class ItemModelDataGen extends ItemModelProvider {
 
         ReflectionUtils.iterateFields(ModBlockGroups.class, BlockGroup.class, field -> ((BlockGroup) field.get(null)).forAllEntries(this::defaultBlockItem));
         ReflectionUtils.iterateFields(ModBlocks.class, BlockEntry.class, field -> defaultBlockItem((BlockEntry<?, ?>) field.get(null)));
+        autoGenerateForSpawnEggs();
+    }
+
+    @SuppressWarnings("unchecked")
+    private void autoGenerateForSpawnEggs() {
+        ReflectionUtils.iterateFields(ModSpawnEggs.class, RegistryObject.class, field -> basicSpawnEggItem(((RegistryObject<? extends Item>) field.get(null)).get()));
+    }
+
+    public ItemModelBuilder basicSpawnEggItem(Item item) {
+        return getBuilder(item.toString()).parent(new ModelFile.UncheckedModelFile("item/template_spawn_egg"));
     }
 
     private void defaultBlockItem(BlockEntry<?, ?> entry) {

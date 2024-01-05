@@ -3,9 +3,6 @@ package lych.necromancer.capability;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.errorprone.annotations.CheckReturnValue;
 import net.minecraftforge.common.capabilities.AutoRegisterCapability;
-import net.minecraftforge.common.capabilities.CapabilityProvider;
-
-import java.util.NoSuchElementException;
 
 @AutoRegisterCapability
 public interface IDarkPowerStorage {
@@ -57,9 +54,5 @@ public interface IDarkPowerStorage {
         }
         changeDarkPower(-amount);
         return true;
-    }
-
-    static IDarkPowerStorage of(@SuppressWarnings("UnstableApiUsage") CapabilityProvider<?> provider) {
-        return provider.getCapability(ModCapabilities.DARK_POWER_STORAGE).orElseThrow(NoSuchElementException::new);
     }
 }

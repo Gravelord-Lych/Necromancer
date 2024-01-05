@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_necrock": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "necromancer:necrock"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "necromancer:necrock_bricks_from_necrock_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_necrock"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "necromancer:necrock_bricks_from_necrock_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

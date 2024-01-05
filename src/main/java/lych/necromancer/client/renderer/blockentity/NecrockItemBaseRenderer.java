@@ -26,7 +26,7 @@ public class NecrockItemBaseRenderer extends AbstractBlockEntityRenderer<Necrock
         if (!itemInside.isEmpty()) {
             poseStack.mulPose(Axis.YP.rotationDegrees(carrier.getSpin(partialTicks)));
             poseStack.scale(SCALE, SCALE, SCALE);
-
+            
             ctx.getItemRenderer().renderStatic(itemInside,
                     ItemDisplayContext.FIXED,
                     lightColor,
