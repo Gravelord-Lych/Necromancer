@@ -30,6 +30,7 @@ public abstract sealed class AbstractOnslaught<T extends AbstractOnslaught<T, C>
     private static final String ROUND_MAX_HEALTH_TAG = "RoundMaxHealth";
     private static final String CURRENT_ROUND_TAG = "CurrentRound";
     private static final String VICTORY_COOLDOWN_TICKS_TAG = "VictoryCooldownTicks";
+    protected static final int FIRST_ROUND_PRE_SPAWN_TICKS = 20 * 30;
     protected static final int DEFAULT_PRE_SPAWN_TICKS = 20 * 15;
     protected static final int DEFAULT_POST_EVENT_TICKS = 20 * 2;
     private final Set<BaseNecromancyCreation> members = new HashSet<>();
@@ -85,10 +86,10 @@ public abstract sealed class AbstractOnslaught<T extends AbstractOnslaught<T, C>
         event.setProgress(Mth.clamp(getPercent(), 0, 1));
         event.setVisible(isActive());
         members.removeIf(AbstractOnslaught::invalid);
-        if (preSpawnTicks < getDefaultPreSpawnTicks()) {
+        if (preSpawnTicks < getDefaultPreSpawnTicks(currentRound + 1)) {
             preSpawnTicks++;
             checkAndSendHints();
-            if (preSpawnTicks == getDefaultPreSpawnTicks()) {
+            if (preSpawnTicks == getDefaultPreSpawnTicks(currentRound + 1)) {
                 currentRound++;
                 startRound();
             }
@@ -142,8 +143,9 @@ public abstract sealed class AbstractOnslaught<T extends AbstractOnslaught<T, C>
     }
 
     protected float getPercent() {
-        if (preSpawnTicks < getDefaultPreSpawnTicks()) {
-            return Mth.clamp((float) preSpawnTicks / getDefaultPreSpawnTicks(), 0, 1);
+        int nextRound = currentRound + 1;
+        if (preSpawnTicks < getDefaultPreSpawnTicks(nextRound)) {
+            return Mth.clamp((float) preSpawnTicks / getDefaultPreSpawnTicks(nextRound), 0, 1);
         }
         return getTotalHealth() / roundMaxHealth;
     }
@@ -179,8 +181,8 @@ public abstract sealed class AbstractOnslaught<T extends AbstractOnslaught<T, C>
         return members;
     }
 
-    protected int getDefaultPreSpawnTicks() {
-        return DEFAULT_PRE_SPAWN_TICKS;
+    protected int getDefaultPreSpawnTicks(int nextRound) {
+        return nextRound == 1 ? FIRST_ROUND_PRE_SPAWN_TICKS : DEFAULT_PRE_SPAWN_TICKS;
     }
 
     protected int getDefaultPostEventTicks() {

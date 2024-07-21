@@ -63,7 +63,7 @@ public final class KeepInventoryHelper {
                     newServerPlayer.totalExperience = oldServerPlayer.totalExperience;
                     newServerPlayer.experienceProgress = oldServerPlayer.experienceProgress;
                     newServerPlayer.setScore(oldServerPlayer.getScore());
-                    if (state.hasCost()) {
+                    if (state.hasCost() && event.isWasDeath()) {
                         data.setKeepInventoryTimes(data.getKeepInventoryTimes() - 1);
                     }
                 }

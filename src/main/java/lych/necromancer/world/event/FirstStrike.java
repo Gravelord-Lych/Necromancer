@@ -49,9 +49,9 @@ public final class FirstStrike extends AbstractOnslaught<FirstStrike, SingleTarg
                 .modifier(globalModifier)
                 .spawns(round()
                         .addHint(1, HINT_START_1)
-                        .addHint(100, HINT_START_2)
-                        .addHint(DEFAULT_PRE_SPAWN_TICKS - 100, HINT_WARNING)
-                        .addHint(DEFAULT_PRE_SPAWN_TICKS, HINT_R1)
+                        .addHint(FIRST_ROUND_PRE_SPAWN_TICKS / 3, HINT_START_2)
+                        .addHint(FIRST_ROUND_PRE_SPAWN_TICKS * 2 / 3, HINT_WARNING)
+                        .addHint(FIRST_ROUND_PRE_SPAWN_TICKS, HINT_R1)
                         .addMob(RoundMob.of(ModEntities.NECRO_GOLEM.get(), RoundMob.empty(), 4)))
                 .at(2)
                 .spawns(round()
@@ -73,6 +73,7 @@ public final class FirstStrike extends AbstractOnslaught<FirstStrike, SingleTarg
             case EASY -> -0.2;
             case NORMAL -> -0.3;
             case HARD -> -0.4;
+
             case PEACEFUL -> -0.9;
         };
     }
